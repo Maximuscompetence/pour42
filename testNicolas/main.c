@@ -12,9 +12,15 @@
 
 #include "main.h"
 
-int main (void)
+int main(int argc, char **argv)
 {
-	cretab();
-	rmtab();
-	return 0;
+    char **tab;
+
+    tab = cretab();
+    if (tab == NULL)
+        return 1;
+
+    rmtab(tab);
+
+    return 0;
 }

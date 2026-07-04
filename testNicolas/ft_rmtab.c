@@ -12,14 +12,15 @@
 
 #include "main.h"
 
-void	rmtab (void)
+void rmtab(char **tab)
 {
-	int	i;
+    int i;
 
-	i = 0;
-	while(i < 4)
-	{
-		// free(tab[i]);
-		i++;
-	}
+    i = 0;
+    while (i < 4)
+    {
+        free(tab[i]);
+        i++;
+    }
+    free(tab);
 }

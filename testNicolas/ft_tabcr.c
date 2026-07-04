@@ -12,32 +12,22 @@
 
 #include "main.h"
 
-char** cretab (void)
+char** cretab(void)
 {
-	int	i;
-	
+    int     i;
+    char    **tab;
 
+    i = 0;
 
-	i = 0;	
-	char	**tab;
-	
-	tab = malloc(sizeof *tab * 5);
-	tab[0] = malloc(sizeof **tab * 5);
-	tab[1] = malloc(sizeof **tab * 5);
-	tab[2] = malloc(sizeof **tab * 5);
-	tab[3] = malloc(sizeof **tab * 5);
+    tab = malloc(sizeof *tab * 4);
+    if (tab == NULL)
+        return NULL;
 
-	// if (tab == NULL)
-		// return (-1);
-	
-	i = 0;
-	while (i != 4)
-	{
-		write (1,tab[i],4);
-		write (1,"\n",1);
-		i++;
-	}
-	/*free(tab);*/
-	return tab;
+    tab[0] = malloc(sizeof **tab * 4);
+    tab[1] = malloc(sizeof **tab * 4);
+    tab[2] = malloc(sizeof **tab * 4);
+    tab[3] = malloc(sizeof **tab * 4);
+
+    return tab;
 }
 

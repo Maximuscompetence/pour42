@@ -10,22 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 char *ft_check_arg(char *arg1)
 {
-	int i;
-	int	j;
-	char	ptr[15];
+    int i = 0;
+    int j = 0;
+    char *ptr;
 
-	i = 0;
-	j = 0;
-	while (arg1[i] != '\0')
-	{
-		if (arg1[i] >= '0' && arg1[i] <= '9')
-		{
-			ptr[j] = arg1[i];
-			j++;
-		}
-		i++;
-	}
-	return ptr;
+    ptr = malloc(15 * sizeof(char));
+    if (!ptr)
+        return NULL;
+
+    while (arg1[i] != '\0')
+    {
+        if (arg1[i] >= '0' && arg1[i] <= '9')
+        {
+            ptr[j] = arg1[i];
+            j++;
+        }
+        i++;
+    }
+    ptr[j] = '\0';
+    return ptr;
 }
