@@ -1,9 +1,11 @@
-#ifndef MAIN_H
-#define MAIN_H
+
+#ifndef	MAIN_H
+#define	MAIN_H
 
 #include <stdlib.h>
+#include <unistd.h>
 
-char **cretab(void);
-void rmtab(char **tab);
+void rmtab (void);
+int cretab (void);
 
 #endif
