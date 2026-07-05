@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_arg.c                                     :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nparolin <nparolin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hazhang <hazhang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/04 17:20:27 by cdaval            #+#    #+#             */
-/*   Updated: 2026/07/04 18:19:41 by nparolin         ###   ########.fr       */
+/*   Created: 2026/07/04 15:18:20 by hazhang           #+#    #+#             */
+/*   Updated: 2026/07/05 15:28:32 by hazhang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_check_arg(char *arg1)
-{
-	int i;
-	int	j;
-	char	ptr[15];
+#include <unistd.h>
 
-	i = 0;
-	j = 0;
-	while (arg1[i] != '\0')
-	{
-		if (arg1[i] >= '0' && arg1[i] <= '9')
-		{
-			ptr[j] = arg1[i];
-			j++;
-		}
-		i++;
-	}
-	return ptr;
+/*
+	Display Error.
+*/
+void	ft_error(void)
+{
+	write(1, "Error\n", 6);
 }
