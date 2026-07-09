@@ -6,7 +6,7 @@
 /*   By: nparolin <nparolin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:09:23 by nparolin          #+#    #+#             */
-/*   Updated: 2026/07/01 18:48:24 by nparolin         ###   ########.fr       */
+/*   Updated: 2026/07/06 17:03:22 by nparolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,14 @@
 
 char *ft_strncpy(char *dest, char *src, unsigned int n);
 
-void main (void)
+int main (void)
 {
 	char	tableau[6] = "salut";
 	char	result[6];
-	unsigned int	x = 3;
-	int	i = 0;
-
-	ft_strncpy(result,tableau,x);
-	while(i != x)
-	{
-		printf("%c",result[i]);
-		i++;
-	}
-
+	printf("%s",ft_strncpy(result,tableau,4));
+	
+	
+return (0);
 }*/
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
@@ -35,9 +29,9 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	unsigned int	i;
 
 	i = 0;
-	while (i != n)
+	while (i < n && src[i])
 	{
-		*(dest + i) = *(src + i);
+		dest[i] = src[i];
 		i++;
 	}
 	while (i < n)

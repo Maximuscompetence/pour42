@@ -6,7 +6,7 @@
 /*   By: nparolin <nparolin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 14:00:32 by nparolin          #+#    #+#             */
-/*   Updated: 2026/07/02 22:12:00 by nparolin         ###   ########.fr       */
+/*   Updated: 2026/07/06 12:48:17 by nparolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
-int	main (void)
+int	main(void)
 {
-	printf("%d", ft_strncmp("salut", "salot", 3));
+	printf("%d", ft_strncmp("salut", "satut", 3));
 }*/
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)

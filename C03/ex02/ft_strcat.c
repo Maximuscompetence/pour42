@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nparolin <nparolin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/01 20:15:21 by nparolin          #+#    #+#             */
-/*   Updated: 2026/07/06 12:52:57 by nparolin         ###   ########.fr       */
+/*   Created: 2026/07/06 12:56:12 by nparolin          #+#    #+#             */
+/*   Updated: 2026/07/06 17:37:08 by nparolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
 
-int ft_strcmp(char *s1, char *s2);
+char	*ft_strcat(char *dest, char *src);
 
-void main (void)
+int	main (void)
 {
-	int	result;
-	char	m1[] = "sal";
-	char	m2[] = "sal";
-	result = ft_strcmp (m1 , m2);
-	printf ("%d",result);
-
+	char	det[100] = "aaa";
+	ft_strcat(det,"bbb");
+	printf("%s",det);
+	return (0);
 }*/
-
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
+	int	x;
 
 	i = 0;
-	while (s1[i] && s1[i] == s2[i])
-	{
+	x = 0;
+	while (dest[i] != '\0')
 		i++;
+	while (src[x])
+	{
+		dest[i] = src[x];
+		i++;
+		x++;
 	}
-	return (s1[i] - s2[i]);
+	dest[i] = '\0';
+	return (dest);
 }

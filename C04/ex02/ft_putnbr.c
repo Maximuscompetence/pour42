@@ -1,37 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nparolin <nparolin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/01 20:15:21 by nparolin          #+#    #+#             */
-/*   Updated: 2026/07/06 12:52:57 by nparolin         ###   ########.fr       */
+/*   Created: 2026/07/07 19:07:19 by nparolin          #+#    #+#             */
+/*   Updated: 2026/07/09 17:39:13 by nparolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
+#include <unistd.h>
 
-int ft_strcmp(char *s1, char *s2);
-
-void main (void)
+void	ft_putchar(char nb)
 {
-	int	result;
-	char	m1[] = "sal";
-	char	m2[] = "sal";
-	result = ft_strcmp (m1 , m2);
-	printf ("%d",result);
-
-}*/
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i] && s1[i] == s2[i])
-	{
-		i++;
-	}
-	return (s1[i] - s2[i]);
+	write (1, &nb, 1);
 }
+
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		write (1, "-2147483648", 11);
+		return ;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = nb * -1;
+	}
+	if (nb < 10)
+	{
+		ft_putchar(nb + '0');
+	}
+	else
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+}
+/*void	main (void)
+{
+	ft_putnbr(100);
+}*/

@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nparolin <nparolin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/01 20:15:21 by nparolin          #+#    #+#             */
-/*   Updated: 2026/07/06 12:52:57 by nparolin         ###   ########.fr       */
+/*   Created: 2026/07/06 18:44:53 by nparolin          #+#    #+#             */
+/*   Updated: 2026/07/07 13:21:07 by nparolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-
-int ft_strcmp(char *s1, char *s2);
-
-void main (void)
-{
-	int	result;
-	char	m1[] = "sal";
-	char	m2[] = "sal";
-	result = ft_strcmp (m1 , m2);
-	printf ("%d",result);
-
-}*/
-
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strupcase(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] && s1[i] == s2[i])
+	while (str[i])
 	{
+		if (str[i] >= 97 && str[i] <= 122)
+		{
+			str[i] = str[i] -32;
+		}
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return (str);
 }
