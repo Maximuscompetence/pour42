@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nparolin <nparolin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/07 19:07:19 by nparolin          #+#    #+#             */
-/*   Updated: 2026/07/10 12:06:50 by nparolin         ###   ########.fr       */
+/*   Created: 2026/07/10 12:14:10 by nparolin          #+#    #+#             */
+/*   Updated: 2026/07/10 13:47:24 by nparolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*#include <stdio.h>*/
 
-void	ft_putchar(char nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	write (1, &nb, 1);
+	unsigned int	i;
+	unsigned int	x;
+
+	i = 0;
+	x = 0;
+	while (dest[i])
+	{
+		i++;
+	}
+	while (src[x] && x < nb)
+	{
+		dest[i] = src[x];
+		i++;
+		x++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		write (1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb < 10)
-	{
-		ft_putchar(nb + '0');
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-}
 /*void	main (void)
 {
-	ft_putnbr(100);
+	char	envoi[100] = "123456789";
+
+	ft_strncat(envoi,"123456789",5);
+	printf ("%s",envoi);
 }*/

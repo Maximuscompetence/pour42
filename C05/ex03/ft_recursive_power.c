@@ -1,45 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nparolin <nparolin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/07 19:07:19 by nparolin          #+#    #+#             */
-/*   Updated: 2026/07/10 12:06:50 by nparolin         ###   ########.fr       */
+/*   Created: 2026/07/11 17:19:08 by nparolin          #+#    #+#             */
+/*   Updated: 2026/07/11 17:35:02 by nparolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*#include <stdio.h>*/
 
-void	ft_putchar(char nb)
+int ft_recursive_power(int nb, int power)
 {
-	write (1, &nb, 1);
-}
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		write (1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb < 10)
-	{
-		ft_putchar(nb + '0');
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
+	return nb * ft_recursive_power(nb, power - 1);
 }
-/*void	main (void)
+/*int main (void)
 {
-	ft_putnbr(100);
+	printf ("%d",ft_recursive_power(3,2));
+	return (0);
 }*/
