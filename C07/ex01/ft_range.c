@@ -6,7 +6,7 @@
 /*   By: nparolin <nparolin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 13:15:44 by nparolin          #+#    #+#             */
-/*   Updated: 2026/07/14 15:33:45 by nparolin         ###   ########.fr       */
+/*   Updated: 2026/07/14 17:47:25 by nparolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int *ft_range(int min, int max)
 	
 	i = 0;
 	if (max <= min)
-		return (NULL);
+		return NULL;
 	result = malloc(sizeof (int) * (max - min));
 	if (result == 0)
 		return (0);
