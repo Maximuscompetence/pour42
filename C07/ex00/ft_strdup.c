@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nparolin <nparolin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/13 18:44:11 by nparolin          #+#    #+#             */
-/*   Updated: 2026/07/14 13:10:00 by nparolin         ###   ########.fr       */
+/*   Created: 2026/07/15 12:49:53 by nparolin          #+#    #+#             */
+/*   Updated: 2026/07/15 13:04:19 by nparolin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strdup(char *src)
 {
-	int	i;
+	int		i;
 	char	*result;
 
 	i = 0;
@@ -23,7 +23,7 @@ char	*ft_strdup(char *src)
 	{
 		i++;
 	}
-	result = malloc(sizeof *result *(i + 1));
+	result = malloc (sizeof * result *(i + 1));
 	i = 0;
 	while (src[i])
 	{
@@ -35,9 +35,9 @@ char	*ft_strdup(char *src)
 	else
 		return (result);
 }
+
 /*int	main (void)
-{
-	char	*src1 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()";
+{	char	*src1 = "a90!@#$%^&*()";
 	char	*src2;
 	src2 = ft_strdup(src1);
 	printf ("%s",src2);
